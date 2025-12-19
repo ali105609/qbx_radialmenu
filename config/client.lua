@@ -6,84 +6,40 @@ return {
 
     menuItems = {
         {
-            id = 'citizen',
-            icon = 'user',
-            label = 'Citizen',
-            items = {
-                {
-                    id = 'givenum',
-                    icon = 'address-book',
-                    label = 'Give Contact Details',
-                    event = 'qb-phone:client:GiveContactDetails'
-                },
-                {
-                    id = 'getintrunk',
-                    icon = 'car',
-                    label = 'Get In Trunk',
-                    event = 'qb-trunk:client:GetIn'
-                },
-                {
-                    id = 'cornerselling',
-                    icon = 'cannabis',
-                    label = 'Corner Selling',
-                    event = 'qb-drugs:client:cornerselling'
-                },
-                {
-                    id = 'interactions',
-                    icon = 'exclamation-triangle',
-                    label = 'Interaction',
-                    items = {
-                        {
-                            id = 'handcuff',
-                            icon = 'user-lock',
-                            label = 'Cuff',
-                            event = 'police:client:CuffPlayer',
-                        },
-                        {
-                            id = 'playerInVehicle',
-                            icon = 'car-side',
-                            label = 'Put In Vehicle',
-                            event = 'police:client:PutPlayerInVehicle',
-                        },
-                        {
-                            id = 'playerOutVehicle',
-                            icon = 'car-side',
-                            label = 'Take Out Vehicle',
-                            event = 'police:client:SetPlayerOutVehicle',
-                        },
-                        {
-                            id = 'stealPlayer',
-                            icon = 'mask',
-                            label = 'Rob',
-                            event = 'police:client:RobPlayer',
-                        },
-                        {
-                            id = 'kidnapPlayer',
-                            icon = 'user-group',
-                            label = 'Kidnap',
-                            event = 'police:client:KidnapPlayer',
-                        },
-                        {
-                            id = 'escortPlayer',
-                            icon = 'user-group',
-                            label = 'Escort',
-                            event = 'police:client:EscortPlayer',
-                        },
-                        {
-                            id = 'takeHostage',
-                            icon = 'child',
-                            label = 'Take Hostage',
-                            event = 'police:client:TakeHostage',
-                        },
-                    },
-                },
-            },
+            id = 'escort',
+            icon = 'user-group',
+            label = 'Escort',
+            event = 'police:client:EscortPlayer',
         },
         {
-            id = 'general',
-            icon = 'rectangle-list',
-            label = 'General',
+            id = 'citizen',
+            icon = 'user',
+            label = 'Player',
             items = {
+                {
+                    id = 'handcuff',
+                    icon = 'user-lock',
+                    label = 'Cuff',
+                    event = 'police:client:CuffPlayer',
+                },
+                {
+                    id = 'stealPlayer',
+                    icon = 'mask',
+                    label = 'Rob',
+                    event = 'police:client:RobPlayer',
+                },
+                {
+                    id = 'kidnapPlayer',
+                    icon = 'user-group',
+                    label = 'Kidnap',
+                    event = 'police:client:KidnapPlayer',
+                },
+                {
+                    id = 'takeHostage',
+                    icon = 'child',
+                    label = 'Take Hostage',
+                    event = 'police:client:TakeHostage',
+                },
                 {
                     id = 'clothesMenu',
                     icon = 'shirt',
@@ -214,62 +170,77 @@ return {
         },
     },
 
+    vehicleTrunk = {
+        id = 'vehicleTrunk',
+        icon = 'chair',
+        label = 'Get In Trunk',
+        event = 'qb-trunk:client:GetIn'
+    },
+
+    playerInVehicle = {
+        id = 'playerInVehicle',
+        icon = 'car-side',
+        label = 'Put In Vehicle',
+        event = 'police:client:PutPlayerInVehicle',
+    },
+
+    playerOutVehicle = {
+        id = 'playerOutVehicle',
+        icon = 'car-side',
+        label = 'Take Out Vehicle',
+        event = 'police:client:SetPlayerOutVehicle',
+    },
+
+    VehicleMenuUI = {
+        id = 'VehicleMenuUI',
+        icon = 'car-side',
+        label = 'Vehicle Menu',
+        event = '',
+    },
+
     jobItems = {
         police = {
             {
                 id = 'emergencyButton',
                 icon = 'bell',
-                label = 'Emergency Button',
+                label = 'Panic',
                 event = 'police:client:SendPoliceEmergencyAlert',
             },
+            --{
+            --    id = 'resetHouse',
+            --    icon = 'key',
+            --    label = 'Reset House Lock',
+            --    event = 'qb-houses:client:ResetHouse',
+            --},
             {
-                id = 'resetHouse',
-                icon = 'key',
-                label = 'Reset House Lock',
-                event = 'qb-houses:client:ResetHouse',
+                id = 'handcuff',
+                icon = 'user-lock',
+                label = 'Cuff',
+                event = 'police:client:CuffPlayer',
             },
             {
-                id = 'revokeDriversLicense',
-                icon = 'id-card',
-                label = 'Revoke Drivers License',
-                event = 'police:client:SeizeDriverLicense',
+                id = 'search',
+                icon = 'magnifying-glass',
+                label = 'Search',
+                event = 'police:client:SearchPlayer',
             },
             {
-                id = 'policeInteractions',
-                icon = 'list-check',
-                label = 'Police Interactions',
-                items = {
-                    {
-                        id = 'statusCheck',
-                        icon = 'heart-pulse',
-                        label = 'Check Health Status',
-                        event = 'hospital:client:CheckStatus',
-                    },
-                    {
-                        id = 'escort',
-                        icon = 'user-group',
-                        label = 'Escort',
-                        event = 'police:client:EscortPlayer',
-                    },
-                    {
-                        id = 'search',
-                        icon = 'magnifying-glass',
-                        label = 'Search',
-                        event = 'police:client:SearchPlayer',
-                    },
-                    {
-                        id = 'jail',
-                        icon = 'user-lock',
-                        label = 'Jail',
-                        event = 'police:client:JailPlayer',
-                    },
-                },
+                id = 'jail',
+                icon = 'user-lock',
+                label = 'Jail',
+                event = 'police:client:JailPlayer',
             },
             {
                 id = 'policeObjects',
                 icon = 'road',
-                label = 'Police Objects',
+                label = 'Objects',
                 items = {
+                    {
+                        id = 'deleteObject',
+                        icon = 'trash',
+                        label = 'Delete Object',
+                        event = 'police:client:deleteObject',
+                    },
                     {
                         id = 'cone',
                         icon = 'triangle-exclamation',
@@ -292,13 +263,6 @@ return {
                         args = 'roadsign',
                     },
                     {
-                        id = 'tent',
-                        icon = 'campground',
-                        label = 'Tent',
-                        event = 'police:client:spawnPObj',
-                        args = 'tent',
-                    },
-                    {
                         id = 'lighting',
                         icon = 'lightbulb',
                         label = 'Lighting',
@@ -310,12 +274,6 @@ return {
                         icon = 'caret-up',
                         label = 'Spikestrip',
                         event = 'police:client:SpawnSpikeStrip',
-                    },
-                    {
-                        id = 'deleteObject',
-                        icon = 'trash',
-                        label = 'Delete Object',
-                        event = 'police:client:deleteObject',
                     },
                 },
             },
@@ -344,12 +302,6 @@ return {
                 icon = 'bell',
                 label = 'Emergency Button',
                 serverEvent = 'hospital:server:emergencyAlert',
-            },
-            {
-                id = 'escort',
-                icon = 'user-group',
-                label = 'Escort',
-                event = 'police:client:EscortPlayer',
             },
         },
         mechanic = {
@@ -397,198 +349,6 @@ return {
     },
 
     gangItems = {},
-
-    vehicleDoors = {
-        id = 'vehicleDoors',
-        icon = 'car-side',
-        label = 'Vehicle Doors',
-        items = {
-            {
-                id = 'door0',
-                icon = 'car-side',
-                label = 'Driver\'s Door',
-                event = 'qb-radialmenu:client:openDoor',
-                args = 0,
-            },
-            {
-                id = 'door1',
-                icon = 'car-side',
-                label = 'Passenger\'s Door',
-                event = 'qb-radialmenu:client:openDoor',
-                args = 1,
-            },
-            {
-                id = 'door2',
-                icon = 'car-side',
-                label = 'Back Left Door',
-                event = 'qb-radialmenu:client:openDoor',
-                args = 2,
-            },
-            {
-                id = 'door3',
-                icon = 'car-side',
-                label = 'Back Right Door',
-                event = 'qb-radialmenu:client:openDoor',
-                args = 3,
-            },
-            {
-                id = 'door4',
-                icon = 'car-side',
-                label = 'Hood',
-                event = 'qb-radialmenu:client:openDoor',
-                args = 4,
-            },
-            {
-                id = 'door5',
-                icon = 'car-side',
-                label = 'Trunk',
-                event = 'qb-radialmenu:client:openDoor',
-                args = 5,
-            },
-        },
-    },
-
-    vehicleWindows = {
-        id = 'vehicleWindows',
-        icon = 'car-side',
-        label = 'Vehicle Windows',
-        items = {
-            {
-                id = 'window0',
-                icon = 'car-side',
-                label = 'Driver\'s Window',
-                event = 'qbx_radialmenu:client:toggleWindows',
-                args = 0,
-            },
-            {
-                id = 'window1',
-                icon = 'car-side',
-                label = 'Passenger\'s Window',
-                event = 'qbx_radialmenu:client:toggleWindows',
-                args = 1,
-            },
-            {
-                id = 'window2',
-                icon = 'car-side',
-                label = 'Back Left Window',
-                event = 'qbx_radialmenu:client:toggleWindows',
-                args = 2,
-            },
-            {
-                id = 'window3',
-                icon = 'car-side',
-                label = 'Back Right Window',
-                event = 'qbx_radialmenu:client:toggleWindows',
-                args = 3,
-            },
-        },
-    },
-
-    vehicleSeats = {
-        id = 'vehicleSeats',
-        icon = 'chair',
-        label = 'Vehicle Seats',
-        menu = 'vehicleSeatsMenu'
-    },
-
-    vehicleExtras = {
-        id = 'vehicleExtras',
-        icon = 'plus',
-        label = 'Vehicle Extras',
-        items = {
-            {
-                id = 'extra1',
-                icon = 'box-open',
-                label = 'Extra 1',
-                event = 'radialmenu:client:setExtra',
-                args = 1,
-            },
-            {
-                id = 'extra2',
-                icon = 'box-open',
-                label = 'Extra 2',
-                event = 'radialmenu:client:setExtra',
-                args = 2,
-            },
-            {
-                id = 'extra3',
-                icon = 'box-open',
-                label = 'Extra 3',
-                event = 'radialmenu:client:setExtra',
-                args = 3,
-            },
-            {
-                id = 'extra4',
-                icon = 'box-open',
-                label = 'Extra 4',
-                event = 'radialmenu:client:setExtra',
-                args = 4,
-            },
-            {
-                id = 'extra5',
-                icon = 'box-open',
-                label = 'Extra 5',
-                event = 'radialmenu:client:setExtra',
-                args = 5,
-            },
-            {
-                id = 'extra6',
-                icon = 'box-open',
-                label = 'Extra 6',
-                event = 'radialmenu:client:setExtra',
-                args = 6,
-            },
-            {
-                id = 'extra7',
-                icon = 'box-open',
-                label = 'Extra 7',
-                event = 'radialmenu:client:setExtra',
-                args = 7,
-            },
-            {
-                id = 'extra8',
-                icon = 'box-open',
-                label = 'Extra 8',
-                event = 'radialmenu:client:setExtra',
-                args = 8,
-            },
-            {
-                id = 'extra9',
-                icon = 'box-open',
-                label = 'Extra 9',
-                event = 'radialmenu:client:setExtra',
-                args = 9,
-            },
-            {
-                id = 'extra10',
-                icon = 'box-open',
-                label = 'Extra 10',
-                event = 'radialmenu:client:setExtra',
-                args = 10,
-            },
-            {
-                id = 'extra11',
-                icon = 'box-open',
-                label = 'Extra 11',
-                event = 'radialmenu:client:setExtra',
-                args = 11,
-            },
-            {
-                id = 'extra12',
-                icon = 'box-open',
-                label = 'Extra 12',
-                event = 'radialmenu:client:setExtra',
-                args = 12,
-            },
-            {
-                id = 'extra13',
-                icon = 'box-open',
-                label = 'Extra 13',
-                event = 'radialmenu:client:setExtra',
-                args = 13,
-            },
-        },
-    },
 
     trunkClasses = {
         [0] = {allowed = true, x = 0.0, y = -1.5, z = 0.0}, -- Coupes

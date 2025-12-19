@@ -119,17 +119,13 @@ function setupVehicleMenu(seat)
         end
     }}
 
-    vehicleItems[#vehicleItems + 1] = convert(config.vehicleDoors)
+    vehicleItems[#vehicleItems + 1] = convert(config.vehicleTrunk)
 
-    vehicleItems[#vehicleItems + 1] = convert(config.vehicleWindows)
+    vehicleItems[#vehicleItems + 1] = convert(config.playerInVehicle)
 
-    if config.enableExtraMenu then
-        vehicleItems[#vehicleItems + 1] = convert(config.vehicleExtras)
-    end
+    vehicleItems[#vehicleItems + 1] = convert(config.playerOutVehicle)
 
-    if config.vehicleSeats and seat then
-        vehicleItems[#vehicleItems + 1] = config.vehicleSeats
-    end
+    vehicleItems[#vehicleItems + 1] = convert(config.VehicleMenuUI)
 
     lib.registerRadial({
         id = 'vehicleMenu',
